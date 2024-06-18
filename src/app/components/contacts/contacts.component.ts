@@ -45,6 +45,13 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+
+  delete(contact: Contact) {
+    this.contactService.deleteContact(contact).subscribe({
+      next: () => this.loadContact(),
+    });
+  }
+
   loadContact(){
     this.contactService.getContacts().subscribe({
       next: (data) => {
