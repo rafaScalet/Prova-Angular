@@ -32,6 +32,7 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit() {
     this.loadTypes();
+    this.loadContact();
   }
 
   save() {
@@ -44,11 +45,23 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+  loadContact(){
+    this.contactService.getContacts().subscribe({
+      next: (data) => {
+        this.contacts = data;
+      },
+    });
+  }
+
   loadTypes() {
     this.contactTypeService.getContactTypes().subscribe({
       next: (data) => {
         this.contactTypes = data;
       },
     });
+  }
+
+  getTypeName(contactTypeId: number): ContactType | undefined{
+    return this.contactTypes.find((contactType) => contactType.id === contactTypeId);
   }
 }

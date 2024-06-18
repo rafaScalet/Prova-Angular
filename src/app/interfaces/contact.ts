@@ -4,5 +4,5 @@ export interface Contact {
   email: string;
   phone: string;
   favorite: boolean;
-  contactTypeId: string;
+  contactTypeId: number;
 }

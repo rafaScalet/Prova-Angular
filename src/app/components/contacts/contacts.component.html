@@ -1,49 +1,71 @@
-<div class="card">
-  <div class="d-flex justify-content-center align-items-center text-center vh-100">
-    <div class="text-white bg-dark p-5">
-      <form [formGroup]="contactFormGroup">
-        <h1 class="mb-5">Contact</h1>
-        <div class="row mb-3">
-          <div class="input-group col">
-            <input class="form-control" formControlName="name" type="text" name="name" id="name"
-              placeholder="Enter the name">
-            <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+<div class="d-flex justify-content-center align-items-center text-center vh-100">
+  <div class="card text-white bg-dark p-5">
+    <form [formGroup]="contactFormGroup">
+      <h1 class="mb-5">Contact</h1>
+      <div class="row mb-3">
+        <div class="input-group col">
+          <input class="form-control" formControlName="name" type="text" name="name" id="name"
+            placeholder="Enter the name">
+          <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="input-group col">
+          <input class="form-control" formControlName="email" type="text" name="email" id="email"
+            placeholder="Enter the email">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="input-group col">
+          <input class="form-control" formControlName="phone" type="text" name="phone" id="phone"
+            placeholder="Enter the phone">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="input-group col">
+          <select class="form-control" name="contactTypeId" id="contactTypeId" formControlName="contactTypeId">
+            <option value="" disabled selected>Type</option>
+            <option [ngValue]="contactType.id" *ngFor="let contactType of contactTypes">{{contactType.type}}</option>
+          </select>
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+        </div>
+        <div class="input-group col">
+          <div class="btn-group col-12" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" formControlName="favorite" class="btn-check" id="favorite" autocomplete="off">
+            <label class="btn btn-outline-light" for="favorite"><i class="bi bi-star"></i></label>
           </div>
         </div>
-        <div class="row mb-3">
-          <div class="input-group col">
-            <input class="form-control" formControlName="email" type="text" name="email" id="email"
-              placeholder="Enter the email">
-            <span class="input-group-text"><i class="bi bi-person"></i></span>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="input-group col">
-            <input class="form-control" formControlName="phone" type="text" name="phone" id="phone"
-              placeholder="Enter the phone">
-            <span class="input-group-text"><i class="bi bi-person"></i></span>
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="input-group col">
-            <select class="form-control" name="contactTypeId" id="contactTypeId" formControlName="contactTypeId">
-              <option value="" disabled selected>Type</option>
-              <option [ngValue]="contactType.id" *ngFor="let contactType of contactTypes">{{contactType.type}}</option>
-            </select>
-            <span class="input-group-text"><i class="bi bi-person"></i></span>
-          </div>
-          <div class="input-group col">
-            <div class="btn-group col-12" role="group" aria-label="Basic checkbox toggle button group">
-              <input type="checkbox" formControlName="favorite" class="btn-check" id="favorite" autocomplete="off">
-              <label class="btn btn-outline-light" for="favorite"><i class="bi bi-star"></i></label>
-            </div>
-          </div>
-        </div>
-        <div class="row mx-auto mb-5">
-          <button class="btn btn-light" (click)="save()" type="submit">save <i
-              class="bi bi-box-arrow-in-right"></i></button>
-        </div>
-      </form>
+      </div>
+      <div class="row mx-auto mb-5">
+        <button class="btn btn-light" (click)="save()" type="submit">save <i
+            class="bi bi-box-arrow-in-right"></i></button>
+      </div>
+    </form>
+    <div class="card p-2">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+            <th scope="col">phone</th>
+            <th scope="col">type</th>
+            <th scope="col">favorite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts">
+            <th>{{contact.id}}</th>
+            <th>{{contact.name}}</th>
+            <th>{{contact.email}}</th>
+            <th>{{contact.phone}}</th>
+            <th>{{getTypeName(contact.contactTypeId)?.type}}</th>
+            <th>{{contact.favorite}}</th>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

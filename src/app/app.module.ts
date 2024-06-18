@@ -8,7 +8,6 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { ContactTypesComponent } from './components/contact-types/contact-types.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,7 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
     ContactTypesComponent,
     HomeComponent,
     NavbarComponent,
-    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
