@@ -1,1 +1,17 @@
-<p>contact-types works!</p>
+<div class="d-flex justify-content-center align-items-center text-center vh-100">
+  <div class="card text-white bg-dark p-5">
+    <form [formGroup]="contactTypeFormGrup">
+      <h1 class="mb-5">Contact Type</h1>
+      <div class="row mb-3">
+        <div class="input-group col">
+          <input class="form-control" formControlName="type" type="text" name="type" id="type"
+            placeholder="Enter the type">
+          <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+        </div>
+      </div>
+      <div class="row mx-auto mb-5">
+        <button class="btn btn-light" (click)="save()" type="submit">save <i class="bi bi-box-arrow-in-right"></i></button>
+      </div>
+    </form>
+  </div>
+</div>
