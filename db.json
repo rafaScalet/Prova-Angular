@@ -29,6 +29,14 @@
       "phone": "(11) 88888-8888",
       "favorite": false,
       "contactTypeId": 2
+    },
+    {
+      "id": 3,
+      "name": "julia",
+      "email": "julia@email.com",
+      "phone": "(11) 77777-7777",
+      "favorite": true,
+      "contactTypeId": 3
     }
   ]
 }

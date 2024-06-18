@@ -6,7 +6,7 @@
         <div class="input-group col">
           <input class="form-control" formControlName="type" type="text" name="type" id="type"
             placeholder="Enter the type">
-          <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+          <span class="input-group-text"><i class="bi bi-braces"></i></span>
         </div>
       </div>
       <div class="row mx-auto mb-5">
@@ -17,14 +17,14 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th scope="col">id</th>
+              <th scope="col">#</th>
               <th scope="col">type</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let contactType of contactTypes">
               <th>{{contactType.id}}</th>
-              <th>{{contactType.type}}</th>
+              <td>{{contactType.type}}</td>
             </tr>
           </tbody>
         </table>
