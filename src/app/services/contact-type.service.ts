@@ -11,6 +11,10 @@ export class ContactTypeService {
 
   constructor(private http: HttpClient) { }
 
+  getContactTypes(): Observable<ContactType[]>{
+    return this.http.get<ContactType[]>(this.url);
+  }
+
   postContactType(contactType: ContactType): Observable<ContactType>{
     return this.http.post<ContactType>(this.url, contactType);
   }

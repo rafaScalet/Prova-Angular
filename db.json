@@ -7,6 +7,10 @@
     {
       "id": 2,
       "type": "family"
+    },
+    {
+      "id": 3,
+      "type": "work"
     }
   ]
 }

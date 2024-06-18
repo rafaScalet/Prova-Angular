@@ -10,7 +10,24 @@
         </div>
       </div>
       <div class="row mx-auto mb-5">
-        <button class="btn btn-light" (click)="save()" type="submit">save <i class="bi bi-box-arrow-in-right"></i></button>
+        <button class="btn btn-light" (click)="save()" type="submit">save <i
+            class="bi bi-box-arrow-in-right"></i></button>
+      </div>
+      <div class="card p-2">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let contactType of contactTypes">
+              <th>{{contactType.id}}</th>
+              <th>{{contactType.type}}</th>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </form>
   </div>

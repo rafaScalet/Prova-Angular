@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ContactType } from '../../interfaces/contact-types';
 import { ContactTypeService } from '../../services/contact-type.service';
@@ -8,7 +8,7 @@ import { ContactTypeService } from '../../services/contact-type.service';
   templateUrl: './contact-types.component.html',
   styleUrl: './contact-types.component.css',
 })
-export class ContactTypesComponent {
+export class ContactTypesComponent implements OnInit {
   contactTypes: ContactType[] = [];
   contactTypeFormGrup: FormGroup;
 
@@ -18,16 +18,29 @@ export class ContactTypesComponent {
   ) {
     this.contactTypeFormGrup = formBuilder.group({
       id: [''],
-      type: ['']
+      type: [''],
+    });
+  }
+  ngOnInit() {
+    this.load();
+  }
+
+  load() {
+    this.contactTypeService.getContactTypes().subscribe({
+      next: (data) => {
+        this.contactTypes = data;
+      },
     });
   }
 
-  save(){
-    this.contactTypeService.postContactType(this.contactTypeFormGrup.value).subscribe({
-      next: (data) => {
-        this.contactTypes.push(data);
-        this.contactTypeFormGrup.reset();
-      }
-    })
+  save() {
+    this.contactTypeService
+      .postContactType(this.contactTypeFormGrup.value)
+      .subscribe({
+        next: (data) => {
+          this.contactTypes.push(data);
+          this.contactTypeFormGrup.reset();
+        },
+      });
   }
 }
