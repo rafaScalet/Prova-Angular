@@ -1,42 +1,42 @@
-{
-  "contact-types": [
-    {
-      "id": 1,
-      "type": "friend"
-    },
-    {
-      "id": 2,
-      "type": "family"
-    },
-    {
-      "id": 3,
-      "type": "work"
-    }
-  ],
-  "contact": [
-    {
-      "id": 1,
-      "name": "glauco",
-      "email": "glauco@email.com",
-      "phone": "(11) 99999-9999",
-      "favorite": true,
-      "contactTypeId": 1
-    },
-    {
-      "id": 2,
-      "name": "angelo",
-      "email": "angelo@email.com",
-      "phone": "(11) 88888-8888",
-      "favorite": false,
-      "contactTypeId": 2
-    },
-    {
-      "id": 3,
-      "name": "julia",
-      "email": "julia@email.com",
-      "phone": "(11) 77777-7777",
-      "favorite": true,
-      "contactTypeId": 3
-    }
-  ]
-}
+  {
+    "contact-types": [
+      {
+        "id": 1,
+        "type": "friend"
+      },
+      {
+        "id": 2,
+        "type": "family"
+      },
+      {
+        "id": 3,
+        "type": "work"
+      }
+    ],
+    "contact": [
+      {
+        "id": 1,
+        "name": "glauco",
+        "email": "glauco@email.com",
+        "phone": "(11) 99999-9999",
+        "favorite": true,
+        "contactTypeId": 1
+      },
+      {
+        "id": 2,
+        "name": "angelo",
+        "email": "angelo@email.com",
+        "phone": "(11) 88888-8888",
+        "favorite": false,
+        "contactTypeId": 2
+      },
+      {
+        "id": 3,
+        "name": "julia",
+        "email": "julia@email.com",
+        "phone": "(11) 77777-7777",
+        "favorite": true,
+        "contactTypeId": 3
+      }
+    ]
+  }
